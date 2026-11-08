@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>انس التوبيس | كل ما تحتاجه تحت سقف واحد</title>
+<style>
+:root{--navy:#12345b;--blue:#174b80;--gold:#ffc928;--red:#d92323;--cream:#fffaf0;--ink:#17283c}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f6f9;color:var(--ink);line-height:1.7}
+a{text-decoration:none;color:inherit}.top{background:var(--navy);color:white;padding:8px 5%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+header{background:white;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}.logo{width:66px;height:66px;border-radius:18px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:32px;font-weight:bold}
+.brand h1{margin:0;color:var(--navy);font-size:clamp(25px,4vw,40px)}.brand p{margin:0;color:#9a6900;font-weight:bold}
+.search{padding:12px 16px;border:1px solid #d7dce4;border-radius:30px;min-width:min(300px,90vw);font-size:15px}
+nav{background:var(--navy);color:white;padding:0 5%;display:flex;gap:8px;flex-wrap:wrap}nav a{padding:13px 18px}nav a:hover,nav a.active{background:var(--gold);color:#111;border-radius:8px}
+.hero{margin:22px auto;max-width:1200px;min-height:310px;border-radius:22px;overflow:hidden;background:linear-gradient(90deg,rgba(10,35,65,.15),rgba(10,35,65,.88)),url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=85') center/cover;display:flex;align-items:center;padding:35px;color:white}
+.hero-copy{max-width:570px}.hero h2{font-size:clamp(28px,5vw,48px);margin:0 0 10px}.hero p{font-size:20px;margin:0 0 20px}.btn{display:inline-block;border:0;border-radius:30px;background:var(--gold);color:#14243a;padding:12px 24px;font-weight:bold;cursor:pointer}
+.wrap{max-width:1200px;margin:auto;padding:0 18px}.section{margin:28px 0}.title{display:flex;align-items:center;gap:14px;margin-bottom:16px}.title h2{margin:0;background:var(--navy);color:white;border-radius:30px;padding:7px 28px;font-size:23px}.title:after,.title:before{content:"";height:2px;background:#cbd5e1;flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}.category{background:white;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px #102b4812;text-align:center;border:1px solid #e5e9ef}.category .emoji{height:105px;display:grid;place-items:center;font-size:54px;background:#edf4fb}.category h3{margin:8px 4px 12px;color:var(--navy)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}.product{background:white;border-radius:16px;overflow:hidden;border:1px solid #e3e8ef;box-shadow:0 3px 12px #102b4810}.product img{width:100%;height:160px;object-fit:cover;background:#eef2f6}.product .info{padding:12px}.product h3{margin:0 0 4px}.price{color:#c71919;font-size:20px;font-weight:bold}.muted{color:#68778a;font-size:14px}.product .btn{background:var(--red);color:white;padding:8px 15px;margin-top:8px}
+.banner{background:#fff2c5;border:1px dashed #d4a000;border-radius:16px;padding:20px;text-align:center}
+footer{margin-top:40px;background:var(--navy);color:white;padding:30px 5%}.footgrid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px}.footgrid h3{color:var(--gold);margin-top:0}
+.admin{position:fixed;left:14px;bottom:14px;z-index:9;background:var(--gold);color:#111;border:0;border-radius:50px;padding:12px 17px;font-weight:bold;box-shadow:0 4px 16px #0003}
+dialog{border:0;border-radius:18px;width:min(720px,94vw);max-height:90vh;overflow:auto;padding:22px;box-shadow:0 10px 40px #0005}dialog::backdrop{background:#08182bcc}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}label{display:block;font-weight:bold;font-size:14px}input,textarea,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:9px;margin:5px 0 12px;font:inherit}textarea{min-height:75px}.actions{display:flex;gap:8px;flex-wrap:wrap}.secondary{background:#e7edf4;color:#12345b}.danger{background:#b91c1c;color:white}.notice{background:#fff7dc;border-right:4px solid #e0a500;padding:12px;border-radius:8px;font-size:14px}
+@media(max-width:600px){header{justify-content:center;text-align:center}.brand{justify-content:center}.hero{margin:12px;min-height:270px}.hero p{font-size:16px}nav{justify-content:center}nav a{padding:10px}}
+</style></head>
+<body>
+<div class="top"><span id="topWelcome">أهلاً بكم في متجر انس التوبيس</span><span id="topPhone">للتواصل: أضف رقمك من لوحة التحكم</span></div>
+<header><div class="brand"><div class="logo" id="logoMark">أ</div><div><h1 id="storeName">انس التوبيس</h1><p id="tagline">كل ما تحتاجه تحت سقف واحد</p></div></div><input class="search" id="search" placeholder="ابحث عن منتج..." oninput="renderProducts()"></header>
+<nav><a class="active" href="#home">الرئيسية</a><a href="#about">من نحن</a><a href="#categories">الأقسام</a><a href="#products">المنتجات</a><a href="#offers">العروض</a><a href="#contact">تواصل معنا</a></nav>
+<section class="hero" id="home"><div class="hero-copy"><h2 id="heroTitle">تسوّق احتياجاتك بكل سهولة</h2><p id="heroText">جودة عالية، أسعار مناسبة، وخدمة مميزة. تصفّح أقسام المجلة واختر ما تحتاجه.</p><a class="btn" href="#categories">تصفح المجلة ←</a></div></section>
+<main class="wrap">
+<section class="section" id="about"><div class="title"><h2>من نحن</h2></div><div class="banner" id="aboutText">مرحباً بكم في متجر انس التوبيس. نسعى لتوفير احتياجاتكم اليومية في مكان واحد وبأسعار مناسبة.</div></section>
+<section class="section" id="categories"><div class="title"><h2>أقسام المتجر</h2></div><div class="grid" id="categoryGrid"></div></section>
+<section class="section" id="offers"><div class="title"><h2>عروض مميزة ⭐</h2></div><div class="banner">تابعوا هذه المساحة لاكتشاف أحدث التخفيضات والعروض الخاصة.</div></section>
+<section class="section" id="products"><div class="title"><h2>منتجات المجلة</h2></div><div class="products" id="productGrid"></div></section>
+<section class="section" id="contact"><div class="title"><h2>تواصل معنا</h2></div><div class="grid"><div class="banner"><b>📍 العنوان</b><p id="address">أدخل عنوان المتجر من لوحة التحكم</p></div><div class="banner"><b>☎ الهاتف</b><p id="phone">أدخل رقم الهاتف من لوحة التحكم</p></div><div class="banner"><b>🕒 ساعات العمل</b><p id="hours">أدخل ساعات العمل من لوحة التحكم</p></div><div class="banner"><b>💬 واتساب</b><p><a id="waLink" class="btn" href="#" target="_blank">راسلنا عبر واتساب</a></p></div></div></section>
+</main>
+<footer><div class="footgrid"><div><h3 id="footerName">انس التوبيس</h3><p id="footerTag">كل ما تحتاجه تحت سقف واحد</p></div><div><h3>روابط المجلة</h3><p><a href="#categories">الأقسام</a> · <a href="#products">المنتجات</a> · <a href="#offers">العروض</a></p></div><div><h3>معلومات المتجر</h3><p id="footerAddress">العنوان غير محدد بعد</p><p id="footerPhone">الهاتف غير محدد بعد</p></div></div><p style="text-align:center;border-top:1px solid #ffffff44;padding-top:15px;margin-bottom:0">© <span id="year"></span> متجر انس التوبيس — جميع الحقوق محفوظة</p></footer>
+<button class="admin" onclick="openAdmin()">⚙ لوحة التحكم</button>
+<dialog id="adminDialog"><h2>لوحة التحكم — انس التوبيس</h2><p class="notice">هذه نسخة تجريبية تحفظ التعديلات في هذا المتصفح فقط. عند نشر الموقع لعملائك، يلزم ربطه بقاعدة بيانات/خدمة تخزين حتى تظهر تعديلاتك للجميع.</p>
+<h3>بيانات المتجر والتصميم</h3><div class="formgrid">
+<label>اسم المتجر<input id="aName"></label><label>الشعار النصي<input id="aTag"></label><label>الحرف داخل الشعار<input id="aMark" maxlength="2"></label><label>لون الرأس (مثال #12345b)<input id="aColor"></label><label>عنوان المتجر<input id="aAddress"></label><label>رقم الهاتف<input id="aPhone"></label><label>واتساب مع مفتاح الدولة<input id="aWa" placeholder="9677xxxxxxxx"></label><label>ساعات العمل<input id="aHours"></label><label>عنوان الغلاف<input id="aHeroTitle"></label></div>
+<label>نص الغلاف<textarea id="aHeroText"></textarea></label><label>نبذة من نحن<textarea id="aAbout"></textarea></label>
+<div class="actions"><button class="btn" onclick="saveSettings()">حفظ بيانات المتجر</button></div><hr>
+<h3>إضافة / تعديل منتج</h3>
+<input type="hidden" id="editId">
+<input type="hidden" id="pImageData">
+<div class="formgrid">
+  <label>اسم المنتج<input id="pName"></label>
+  <label>القسم<input id="pCat" placeholder="المواد الغذائية"></label>
+  <label>السعر<input id="pPrice" type="text"></label>
+  <label>اختر صورة المنتج من جهازك<input type="file" id="pImageFile" accept="image/*" onchange="convertImage(this)"></label>
+</div>
+<label>وصف مختصر<input id="pDesc"></label>
+<div class="actions">
+  <button class="btn" onclick="saveProduct()">حفظ المنتج</button>
+  <button class="btn secondary" onclick="clearProduct()">تفريغ الحقول</button>
+</div>
+<h3>المنتجات الحالية</h3><div id="adminProducts"></div><div class="actions" style="margin-top:18px"><button class="btn secondary" onclick="exportData()">تصدير نسخة احتياطية JSON</button><label class="btn secondary" style="display:inline-block">استيراد نسخة<input type="file" accept=".json" onchange="importData(event)" hidden></label><button class="btn danger" onclick="if(confirm('حذف كل بيانات المنتجات والإعدادات؟')){localStorage.removeItem(KEY);location.reload()}">إعادة ضبط النموذج</button><button class="btn secondary" onclick="document.getElementById('adminDialog').close()">إغلاق</button></div>
+</dialog>
+<script>
+const KEY='ans_altobais_magazine_v2';
+const defaults={settings:{name:'انس التوبيس',tag:'كل ما تحتاجه تحت سقف واحد',mark:'أ',color:'#12345b',address:'',phone:'',wa:'',hours:'',heroTitle:'تسوّق احتياجاتك بكل سهولة',heroText:'جودة عالية، أسعار مناسبة، وخدمة مميزة. تصفّح أقسام المجلة واختر ما تحتاجه.',about:'مرحباً بكم في متجر انس التوبيس. نسعى لتوفير احتياجاتكم اليومية في مكان واحد وبأسعار مناسبة.'},products:[],categories:['المواد الغذائية','المشروبات','الألبان','المنظفات','العناية الشخصية','الأدوات المنزلية','العروض والتخفيضات']};
+let data=JSON.parse(localStorage.getItem(KEY)||'null')||defaults;
+function persist(){localStorage.setItem(KEY,JSON.stringify(data))}
+const icons={'المواد الغذائية':'🌾','المشروبات':'🥤','الألبان':'🥛','المنظفات':'🧴','العناية الشخصية':'🧼','الأدوات المنزلية':'🍳','العروض والتخفيضات':'🏷️'};
+function render(){let s=data.settings;document.documentElement.style.setProperty('--navy',s.color||'#12345b');['storeName','footerName'].forEach(id=>document.getElementById(id).textContent=s.name);['tagline','footerTag'].forEach(id=>document.getElementById(id).textContent=s.tag);document.getElementById('logoMark').textContent=s.mark||'أ';document.getElementById('topPhone').textContent=s.phone?'للتواصل: '+s.phone:'للتواصل: أضف رقمك من لوحة التحكم';document.getElementById('address').textContent=s.address||'أدخل عنوان المتجر من لوحة التحكم';document.getElementById('phone').textContent=s.phone||'أدخل رقم الهاتف من لوحة التحكم';document.getElementById('hours').textContent=s.hours||'أدخل ساعات العمل من لوحة التحكم';document.getElementById('footerAddress').textContent=s.address||'العنوان غير محدد بعد';document.getElementById('footerPhone').textContent=s.phone||'الهاتف غير محدد بعد';document.getElementById('heroTitle').textContent=s.heroTitle;document.getElementById('heroText').textContent=s.heroText;document.getElementById('aboutText').textContent=s.about;let wa=document.getElementById('waLink');wa.href=s.wa?'https://wa.me/'+s.wa.replace(/\D/g,''):'#';document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('categoryGrid').innerHTML=data.categories.map(c=>`<a class="category" href="#products" onclick="filterCategory('${c.replace(/'/g,"\\'")}')"><div class="emoji">${icons[c]||'🛍️'}</div><h3>${esc(c)}</h3></a>`).join('');renderProducts()}
+let currentCategory='';
+function filterCategory(c){currentCategory=c;renderProducts()}
+function renderProducts(){let q=(document.getElementById('search').value||'').trim().toLowerCase();let list=data.products.filter(p=>(!currentCategory||p.cat===currentCategory)&&(!q||(p.name+' '+p.cat+' '+p.desc).toLowerCase().includes(q)));document.getElementById('productGrid').innerHTML=list.length?list.map(p=>`<article class="product"><img src="${esc(p.image||'https://placehold.co/600x400?text=Product')}" alt="${esc(p.name)}" onerror="this.src='https://placehold.co/600x400?text=Product'"><div class="info"><h3>${esc(p.name)}</h3><div class="muted">${esc(p.cat||'')}</div><div class="price">${esc(p.price||'')}</div><p class="muted">${esc(p.desc||'')}</p><a class="btn" href="${data.settings.wa?'https://wa.me/'+data.settings.wa.replace(/\D/g,'')+'?text='+encodeURIComponent('أرغب بطلب '+p.name):'#contact'}" target="_blank">اطلب عبر واتساب</a></div></article>`).join(''):'<div class="banner">لا توجد منتجات مضافة حالياً. أضف المنتجات من لوحة التحكم.</div>'}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openAdmin(){let s=data.settings;for(let [id,key] of Object.entries({aName:'name',aTag:'tag',aMark:'mark',aColor:'color',aAddress:'address',aPhone:'phone',aWa:'wa',aHours:'hours',aHeroTitle:'heroTitle',aHeroText:'heroText',aAbout:'about'})){document.getElementById(id).value=s[key]||''}renderAdmin();document.getElementById('adminDialog').showModal()}
+function saveSettings(){let s=data.settings;for(let [id,key] of Object.entries({aName:'name',aTag:'tag',aMark:'mark',aColor:'color',aAddress:'address',aPhone:'phone',aWa:'wa',aHours:'hours',aHeroTitle:'heroTitle',aHeroText:'heroText',aAbout:'about'})){s[key]=document.getElementById(id).value.trim()}persist();render();alert('تم حفظ بيانات المتجر في هذا المتصفح.')}
+
+function convertImage(input){
+  if(input.files && input.files[0]){
+    let reader = new FileReader();
+    reader.onload = function(e){
+      document.getElementById('pImageData').value = e.target.result;
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function saveProduct(){
+  let p={
+    id:document.getElementById('editId').value||String(Date.now()),
+    name:document.getElementById('pName').value.trim(),
+    cat:document.getElementById('pCat').value.trim(),
+    price:document.getElementById('pPrice').value.trim(),
+    image:document.getElementById('pImageData').value || '',
+    desc:document.getElementById('pDesc').value.trim()
+  };
+  if(!p.name){alert('أدخل اسم المنتج');return}
+  let i=data.products.findIndex(x=>x.id===p.id);
+  if(i>=0){
+    if(!p.image) p.image = data.products[i].image; // الاحتفاظ بالصورة القديمة إن لم يتم تغييرها
+    data.products[i]=p;
+  } else {
+    data.products.push(p);
+  }
+  persist();render();renderAdmin();clearProduct();alert('تم حفظ المنتج بنجاح.');
+}
+
+function editProduct(id){
+  let p=data.products.find(x=>x.id===id);
+  if(!p)return;
+  document.getElementById('editId').value=p.id;
+  document.getElementById('pName').value=p.name;
+  document.getElementById('pCat').value=p.cat;
+  document.getElementById('pPrice').value=p.price;
+  document.getElementById('pImageData').value=p.image||'';
+  document.getElementById('pDesc').value=p.desc;
+}
+
+function deleteProduct(id){if(confirm('هل تريد حذف هذا المنتج؟')){data.products=data.products.filter(p=>p.id!==id);persist();render();renderAdmin()}}
+function clearProduct(){['editId','pName','pCat','pPrice','pImageFile','pImageData','pDesc'].forEach(id=>{let el=document.getElementById(id);if(el)el.value='';})}
+function renderAdmin(){document.getElementById('adminProducts').innerHTML=data.products.length?data.products.map(p=>`<div style="padding:9px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><span>${esc(p.name)} — ${esc(p.price)}</span><span><button class="btn secondary" onclick="editProduct('${p.id}')">تعديل</button> <button class="btn danger" onclick="deleteProduct('${p.id}')">حذف</button></span></div>`).join(''):'لم تتم إضافة منتجات بعد.'}
+function exportData(){let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='نسخة-انس-التوبيس.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{data=JSON.parse(r.result);persist();render();renderAdmin();alert('تم استيراد النسخة.')}catch{alert('الملف غير صالح.')}};r.readAsText(f)}
+render();
+</script></body></html>
